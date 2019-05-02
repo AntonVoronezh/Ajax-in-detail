@@ -13,6 +13,8 @@
 // }
 function getImages(pageNumber, successCalback) {
 	$.ajax(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`, {
-        success: successCalback
+		success: function(data) {
+			successCalback(data);
+		},
 	});
 }
