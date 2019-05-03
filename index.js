@@ -14,11 +14,16 @@ ImagesButton.addEventListener('click', () => {
     promise.then(onDataReceived);
 });
 
-function onDataReceived(data) {
-    data.forEach(el => {
+function onDataReceived(images) {
+    images.forEach(el => {
         const img = document.createElement('img');
         img.src = el.thumbnail;
         resultBlock.appendChild(img);
     });
 };
 
+TasksButton.addEventListener('click', () => {
+    const promise = getTasks();
+    
+    promise.then(onDataReceived);
+});
