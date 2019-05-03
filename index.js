@@ -11,10 +11,10 @@ const ImagesButton = document.querySelector('#click');
 ImagesButton.addEventListener('click', () => {
     const promise = getImages(pageNumber.value);
     
-    promise.then(onDataReceived);
+    promise.then(onImagesReceived);
 });
 
-function onDataReceived(images) {
+function onImagesReceived(images) {
     images.forEach(el => {
         const img = document.createElement('img');
         img.src = el.thumbnail;
@@ -25,5 +25,13 @@ function onDataReceived(images) {
 TasksButton.addEventListener('click', () => {
     const promise = getTasks();
     
-    promise.then(onDataReceived);
+    promise.then(onTasksReceived);
 });
+
+function onTasksReceived(tasks) {
+    tasks.forEach(el => {
+        const li = document.createElement('li');
+        li.src = el.thumbnail;
+        resultBlock.appendChild(li);
+    });
+};
