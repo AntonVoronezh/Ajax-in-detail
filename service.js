@@ -27,14 +27,21 @@
 
 // function getImages(pageNumber) {
 // 	const promise = fetch(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`);
-// 	return promise.then(data => {
-// 		return data.json();
+// 	return promise.then(response => {
+// 		return response.json();
 // 	});
 // }
 
 function getImages(pageNumber) {
 	const promise = axios.get(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`);
-	return promise.then(data => {
-		return data.data;
+	return promise.then(response => {
+		return response.data;
+	});
+}
+
+function getTasks() {
+	const promise = axios.get(`https://repetitora.net/api/Tasks?widgetId=9988`);
+	return promise.then(response => {
+		return response.data;
 	});
 }
