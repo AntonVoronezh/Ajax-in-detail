@@ -1,13 +1,14 @@
 // UI
 const resultBlock = document.querySelector('#result');
 const pageNumber = document.querySelector('#number');
-const Button = document.querySelector('#click');
+const TasksButton = document.querySelector('#tasks');
+const ImagesButton = document.querySelector('#click');
 
 // Button.addEventListener('click', () => {
 // 	getImages(pageNumber.value, onDataReceived);
 // });
 
-Button.addEventListener('click', () => {
+ImagesButton.addEventListener('click', () => {
     const promise = getImages(pageNumber.value);
     
     promise.then(onDataReceived);
