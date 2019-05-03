@@ -55,3 +55,10 @@ function postTasks(title) {
 		return response.data;
 	});
 }
+
+function deleteTasks() {
+	const promise = axios.del(`https://repetitora.net/api/Tasks?widgetId=9988&taskId=9`);
+	return promise.then(response => {
+		return response.data;
+	});
+}
