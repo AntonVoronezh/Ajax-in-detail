@@ -8,7 +8,9 @@ const Button = document.querySelector('#click');
 // });
 
 Button.addEventListener('click', () => {
-	const promise = getImages(pageNumber.value);
+    const promise = getImages(pageNumber.value);
+    
+    promise.then(onDataReceived);
 });
 
 function onDataReceived(data) {

@@ -20,7 +20,14 @@
 // 	});
 // }
 
+// function getImages(pageNumber) {
+// 	const promise = $.ajax(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`);
+// 	return promise;
+// }
+
 function getImages(pageNumber) {
-	const promise = $.ajax(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`);
-	return promise;
+	const promise = fetch(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`);
+	return promise.then(data => {
+		return data.json();
+	});
 }
