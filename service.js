@@ -45,3 +45,10 @@ function getTasks() {
 		return response.data;
 	});
 }
+
+function postTasks(title) {
+	const promise = axios.post(`https://repetitora.net/api/Tasks?widgetId=9988&title=${title}`);
+	return promise.then(response => {
+		return response.data;
+	});
+}

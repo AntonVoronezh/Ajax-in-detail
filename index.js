@@ -1,7 +1,8 @@
 // UI
 const resultBlock = document.querySelector('#result');
+const tasksBlock = document.querySelector('#tasks');
 const pageNumber = document.querySelector('#number');
-const TasksButton = document.querySelector('#tasks');
+const TasksButton = document.querySelector('#tasks-click');
 const ImagesButton = document.querySelector('#click');
 
 // Button.addEventListener('click', () => {
@@ -32,6 +33,6 @@ function onTasksReceived(tasks) {
     tasks.forEach(el => {
         const li = document.createElement('li');
         li.src = el.thumbnail;
-        resultBlock.appendChild(li);
+        tasksBlock.appendChild(li);
     });
 };
