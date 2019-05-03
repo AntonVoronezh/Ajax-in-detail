@@ -36,3 +36,4 @@ function onTasksReceived(tasks) {
         tasksBlock.appendChild(li);
     });
 };
+

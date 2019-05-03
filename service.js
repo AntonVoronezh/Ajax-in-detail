@@ -47,7 +47,10 @@ function getTasks() {
 }
 
 function postTasks(title) {
-	const promise = axios.post(`https://repetitora.net/api/Tasks?widgetId=9988&title=${title}`);
+	const promise = axios.post(`https://repetitora.net/api/Tasks`, {
+		widgetId: 9988,
+		title
+	});
 	return promise.then(response => {
 		return response.data;
 	});
