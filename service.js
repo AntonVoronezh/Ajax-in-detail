@@ -49,7 +49,18 @@ function getTasks() {
 function postTasks(title) {
 	const promise = axios.post(`https://repetitora.net/api/Tasks`, {
 		widgetId: 9988,
-		title
+		title,
+	});
+	return promise.then(response => {
+		return response.data;
+	});
+}
+
+function updateTasks(taskId) {
+	const promise = axios.put(`https://repetitora.net/api/Tasks`, {
+		widgetId: 9988,
+		taskId,
+		title: 'new title',
 	});
 	return promise.then(response => {
 		return response.data;
